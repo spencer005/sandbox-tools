@@ -1,0 +1,24 @@
+[package]
+name = "unshare-core"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "unshare_core"
+path = "src/lib.rs"
+
+[features]
+cli = ["dep:clap"]
+
+[dependencies]
+serde = { workspace = true }
+clap = { workspace = true, optional = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+nix = { workspace = true }
+serde_json = { workspace = true }
+libc = { workspace = true }
+tempfile = { workspace = true }
+procfs = { workspace = true }
+capng = { workspace = true }
+landlock = { workspace = true }

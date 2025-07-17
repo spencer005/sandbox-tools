@@ -1,0 +1,31 @@
+[package]
+name = "unshare-cli"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "rwrap"
+path = "src/main.rs"
+
+[dependencies]
+unshare-core = { path = "../unshare-core", features = ["cli"] }
+anyhow = { workspace = true }
+bitflags = { workspace = true }
+clap = { workspace = true }
+libc = { workspace = true }
+nix = { workspace = true }
+thiserror = { workspace = true }
+tempfile = { workspace = true }
+serde_json = { workspace = true }
+serde = { workspace = true }
+
+
+# build.rs uses pkg-config to find system libraries like libcap and libselinux.
+
+[dev-dependencies]
+tempfile = { workspace = true }
+assert_cmd = { workspace = true }
+predicates = { workspace = true }
+anyhow = { workspace = true }
+atty = { workspace = true }
+landlock = { workspace = true }
